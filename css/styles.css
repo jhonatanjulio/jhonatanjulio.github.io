@@ -1,0 +1,251 @@
+/* fonte padrao font-family: "Inter", sans-serif;*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+:root {
+    --cor-bg: #F3F5FC;
+    --cor-btn1: #0A3871;
+    --cor-btn2: #D8DFE8;
+    --cor-h2: #343A40;
+    --cor-p: #495057;
+}
+
+body {
+    background-color: var(--cor-bg);
+    font-family: "Inter", sans-serif;
+    width: 100vw;
+    height: 100vh;
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+    height: 100%;
+}
+
+#logo-container {
+    padding: 0 44px;
+    width: 120px;
+}
+
+/* estilização entrada de texto */
+#main-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0 80px;
+    gap: 20px;
+    width: 100%;
+    height: 100%;
+}
+
+#digitar-texto {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    font-family: "Inter", sans-serif;
+    font-size: 2rem;
+    margin-top: 180px;
+    color: var(--cor-btn1);
+    outline: none;
+    border: none;
+    resize: none;
+}
+
+#digitar-texto::placeholder {
+    color: var(--cor-btn1);
+}
+
+#atencao {
+    display: flex;
+    color: var(--cor-p);
+    font-size: 1rem;
+    gap: 5px;
+}
+
+.botoes-criptografar {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#botoes {
+    display: flex;
+    justify-content: space-between;
+    gap: 35px;
+}
+
+.btn-criptografar, .btn-descriptografar, .btn-copiar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--cor-btn1);
+    border-radius: 24px;
+    width: 28vw;
+    height: 67px;
+    cursor: pointer;
+}
+
+.btn-criptografar {
+    background-color: var(--cor-btn1);
+    color: #FFF;
+}
+
+.btn-descriptografar {
+    background-color: var(--cor-btn2);
+    color: var(--cor-btn1);
+}
+
+.btn-copiar {
+    width: 100%;
+    color: var(--cor-btn1);
+}
+
+/* estilização aside saída de texto */
+#saida-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 400px;
+    background-color: #FFF;
+    border-radius: 32px;
+    box-shadow: 0px 24px 32px -8px rgba(0,0,0,0.12);
+}
+
+.com-texto, .sem-texto {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 32px;
+    gap: 15px;
+}
+
+.sem-texto-info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+    padding: 0 45px;
+}
+
+.sem-texto-info > h2 {
+    font-size: 1.5rem;
+    color: var(--cor-h2)
+}
+
+.sem-texto-info > p {
+    font-size: 1rem;
+    color: var(--cor-p);
+}
+
+.sem-texto > img {
+    width: 336px;
+}
+
+#saidaTexto {
+    width: 336px;
+    height: 100%;
+    font-family: "Inter", sans-serif;
+    font-size: 1.5rem;
+    color: var(--cor-p);
+    outline: none;
+    border: none;
+    resize: none;
+}
+
+.com-texto {
+    /* trocar o display para alternar o modo com texto/sem texto */
+    display: none;
+    height: 100%;
+}
+
+.sem-texto {
+    /* trocar o display para alternar o modo com texto/sem texto */
+    display: flex;
+}
+
+/* responsividade para tablet */
+@media screen and (max-width: 1114px){
+    main {
+        flex-direction: column;
+        height: auto;
+    }
+
+    /* escondendo a img */
+    .sem-texto > img {
+        display: none;
+    }
+
+    /* personalização do container de saída de texto */
+    #saida-container {
+        width: auto;
+        height: 100%;
+    }
+
+    .btn-copiar {
+        width: 100%;
+    }
+
+    .sem-texto-info {
+        padding: 0;
+    }
+
+    #logo-container {
+        display: flex;
+        justify-content: start;
+        padding: 44px 0;
+        width: auto;
+    }
+
+    /* personalização do container de entrada de texto */
+
+    #digitar-texto {
+        width: auto;
+        height: 450px;
+        margin-top: 0;
+    }
+
+    #main-container {
+        width: auto;
+        padding: 80px 0;
+    }
+
+    .btn-criptografar, .btn-descriptografar {
+        width: 332px;
+        height: 67px;
+    }
+    
+    #saidaTexto {
+        width: 100%;
+    }
+}
+
+/* responsividade mobile */
+@media screen and (max-width: 375px) {
+    main {
+        padding: 0 16px 40px 16px;
+    }
+
+    #logo-container {
+        padding: 44px 0 0 0;
+    }
+
+    #botoes {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    #digitar-texto {
+        height: 280px;
+    }
+
+    .btn-criptografar, .btn-descriptografar {
+        width: 100%;
+    }
+}
